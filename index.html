@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufklappbares Menü</title>
+    <style>
+        .menu-content {
+            display: none;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .menu.active .menu-content {
+            display: block;
+        }
+
+        .menu-summary {
+            cursor: pointer;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="menu hidden" id="schlaf">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Schlaf)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Schlaf.</p>
+        <ul>
+            <li>Info 1</li>
+            <li>Info 2</li>
+            <li>Info 3</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="duschen">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Duschen)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Duschen.</p>
+        <ul>
+            <li>Info 1</li>
+            <li>Info 2</li>
+            <li>Info 3</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    // Event Listener für die Menüs
+    document.querySelectorAll('.menu-summary').forEach(summary => {
+        summary.addEventListener('click', function() {
+            const menu = this.parentElement;
+            menu.classList.toggle('active');
+        });
+    });
+
+    // Funktion, um URL-Parameter zu extrahieren und zu bereinigen
+    function URLParamsPurifyer() {
+        const params = new URLSearchParams(window.location.search);
+        const answer = params.get('answer');
+        if (answer) {
+            return answer
+                .split(',')                // Trenne nach Kommas
+                .map(param => param.trim().toLowerCase());  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
+        }
+        return [];
+    }
+
+    // Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
+    function showDivs() {
+        const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
+
+        if (keywords.length > 0) {
+            if (keywords.includes('schlaf')) {
+                document.getElementById('schlaf').classList.remove('hidden');
+            }
+            if (keywords.includes('duschen')) {
+                document.getElementById('duschen').classList.remove('hidden');
+            }
+        }
+    }
+
+    // Nach dem Laden der Seite divs anzeigen
+    window.onload = showDivs;
+</script>
+
+</body>
+</html>
