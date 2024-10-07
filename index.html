@@ -35,7 +35,7 @@
     <div class="menu-content">
         <p>Hier sind die Informationen zum Thema Schlaf.</p>
         <ul>
-            <li>Info 1</li>
+            <li>Mache einen Powernap</li>
             <li>Info 2</li>
             <li>Info 3</li>
         </ul>
@@ -47,7 +47,19 @@
     <div class="menu-content">
         <p>Hier sind die Informationen zum Thema Duschen.</p>
         <ul>
-            <li>Info 1</li>
+            <li>Nimm eine erfrischende Dusche</li>
+            <li>Info 2</li>
+            <li>Info 3</li>
+        </ul>
+    </div>
+</div>
+    
+<div class="menu hidden" id="medikation">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Medikamente)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Duschen.</p>
+        <ul>
+            <li>Nimm eine erfrischende Dusche</li>
             <li>Info 2</li>
             <li>Info 3</li>
         </ul>
@@ -85,6 +97,10 @@
             }
             if (keywords.includes('duschen')) {
                 document.getElementById('duschen').classList.remove('hidden');
+            }
+            
+            if (keywords.includes('medikationüberprüfen')) {
+                document.getElementById('medikation').classList.remove('hidden');
             }
         }
     }
