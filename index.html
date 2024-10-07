@@ -74,36 +74,35 @@
             menu.classList.toggle('active');
         });
     });
-
-    // Funktion, um URL-Parameter zu extrahieren und zu bereinigen
-    function URLParamsPurifyer() {
-        const params = new URLSearchParams(window.location.search);
-        const answer = params.get('answer');
-        if (answer) {
-            return answer
-                .split(',')                // Trenne nach Kommas
-                .map(param => param.trim().toLowerCase());  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
-        }
-        return [];
+// Funktion, um URL-Parameter zu extrahieren und zu bereinigen
+function URLParamsPurifyer() {
+    const params = new URLSearchParams(window.location.search);
+    const answer = params.get('answer');
+    if (answer) {
+        return answer
+            .split(',')                // Trenne nach Kommas
+            .map(param => param.trim().toLowerCase().replace(/\s+/g, ''));  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
     }
+    return [];
+}
 
-    // Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
-    function showDivs() {
-        const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
+// Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
+function showDivs() {
+    const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
 
-        if (keywords.length > 0) {
-            if (keywords.includes('schlaf')) {
-                document.getElementById('schlaf').classList.remove('hidden');
-            }
-            if (keywords.includes('duschen')) {
-                document.getElementById('duschen').classList.remove('hidden');
-            }
-            
-            if (keywords.includes('medikationüberprüfen')) {
-                document.getElementById('medikation').classList.remove('hidden');
-            }
+    if (keywords.length > 0) {
+        if (keywords.includes('schlaf')) {
+            document.getElementById('schlaf').classList.remove('hidden');
+        }
+        if (keywords.includes('duschen')) {
+            document.getElementById('duschen').classList.remove('hidden');
+        }
+        
+        if (keywords.includes('medikationüberprüfen')) {
+            document.getElementById('medikation').classList.remove('hidden');
         }
     }
+}
 
     // Nach dem Laden der Seite divs anzeigen
     window.onload = showDivs;
