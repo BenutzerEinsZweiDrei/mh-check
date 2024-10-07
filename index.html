@@ -7,12 +7,12 @@
     <style>
         .menu-content {
     display: none;
-    margin-top: 10px;
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 8px; /* Abgerundete Ecken */
-    background-color: #fff; /* Weißer Hintergrund */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    margin-top: 12px; /* Mehr Abstand nach oben */
+    border: 1px solid #b0bec5; /* Sanfterer Grauton */
+    padding: 15px; /* Mehr Innenabstand */
+    border-radius: 10px; /* Leicht stärkere Abrundung */
+    background-color: #fafafa; /* Helleres Weiß für angenehmeren Kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tieferer Schatten für mehr Dimension */
 }
 
 .menu.active .menu-content {
@@ -21,15 +21,16 @@
 
 .menu-summary {
     cursor: pointer;
-    background-color: #e0e0e0; /* Hellere Hintergrundfarbe */
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* Abgerundete Ecken */
-    transition: background-color 0.3s ease; /* Weiche Übergänge für Hover-Effekt */
+    background-color: #eceff1; /* Leichte Grau-Blau-Tönung */
+    padding: 12px; /* Etwas mehr Innenabstand */
+    border: 1px solid #b0bec5; /* Gleicher Rand wie Inhalt */
+    border-radius: 10px; /* Einheitliche Abrundung */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Glatter Übergang auch für Schatten */
 }
 
 .menu-summary:hover {
-    background-color: #d0d0d0; /* Dunklerer Hintergrund bei Hover */
+    background-color: #cfd8dc; /* Etwas dunklerer, aber sanfterer Hover-Effekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten bei Hover */
 }
 
 
