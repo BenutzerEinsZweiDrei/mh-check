@@ -1,0 +1,171 @@
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufklappbares Menü</title>
+    <style>
+        .menu-content {
+    display: none;
+    margin-top: 12px; /* Mehr Abstand nach oben */
+    border: 1px solid #b0bec5; /* Sanfterer Grauton */
+    padding: 15px; /* Mehr Innenabstand */
+    border-radius: 10px; /* Leicht stärkere Abrundung */
+    background-color: #fafafa; /* Helleres Weiß für angenehmeren Kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tieferer Schatten für mehr Dimension */
+}
+
+.menu.active .menu-content {
+    display: block;
+}
+
+.menu-summary {
+    cursor: pointer;
+    background-color: #eceff1; /* Leichte Grau-Blau-Tönung */
+    padding: 12px; /* Etwas mehr Innenabstand */
+    border: 1px solid #b0bec5; /* Gleicher Rand wie Inhalt */
+    border-radius: 10px; /* Einheitliche Abrundung */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Glatter Übergang auch für Schatten */
+}
+
+.menu-summary:hover {
+    background-color: #cfd8dc; /* Etwas dunklerer, aber sanfterer Hover-Effekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten bei Hover */
+}
+
+
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2> Ergebnisse aus Tally</h2>
+ <br><br>
+<div class="menu hidden" id="tanzenistgutercopingskill">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Tanzen ist ein guter Coping Skill)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Tanzen als Coping Skill.</p>
+        <ul>
+            <li>Tanzen kann helfen, Stress abzubauen</li>
+            <li>Es verbessert die Stimmung und fördert die Bewegung</li>
+            <li>Verwende Musik, die dir Freude bereitet, um den Effekt zu verstärken</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="therapieklingtgut">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Therapie klingt gut)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Therapie.</p>
+        <ul>
+            <li>Therapie kann dir helfen, emotionale Herausforderungen zu bewältigen</li>
+            <li>Es gibt viele verschiedene Arten von Therapie, wie z.B. Gesprächstherapie oder Verhaltenstherapie</li>
+            <li>Regelmäßige Sitzungen können langfristige Verbesserungen fördern</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="kleinigkeiterledigen">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Kleinigkeit erledigen)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Kleinigkeit erledigen.</p>
+        <ul>
+            <li>Kleine Aufgaben können schnell Erfolgserlebnisse bringen</li>
+            <li>Beginne mit einfachen Dingen, um Motivation aufzubauen</li>
+            <li>Selbst kleine Schritte können große Auswirkungen auf dein Wohlbefinden haben</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="selfieverschicken">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Selfie verschicken)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Selfie verschicken.</p>
+        <ul>
+            <li>Selfies können eine lustige Art sein, mit Freunden in Kontakt zu bleiben</li>
+            <li>Sie helfen dir, dich selbst auszudrücken und deine Stimmung zu teilen</li>
+            <li>Ein Selfie kann auch ein Zeichen der Nähe und Unterstützung sein</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="odereinvisionboard">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Oder ein Visionboard)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Visionboard.</p>
+        <ul>
+            <li>Ein Visionboard kann dir helfen, deine Ziele zu visualisieren</li>
+            <li>Verwende Bilder und Worte, die deine Träume und Wünsche darstellen</li>
+            <li>Es hilft, deine Ziele klar vor Augen zu halten und Motivation zu finden</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="wocheabwarten">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Woche abwarten)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Abwarten.</p>
+        <ul>
+            <li>Manchmal ist es gut, sich eine Woche Zeit zu nehmen, bevor man Entscheidungen trifft</li>
+            <li>Geduld kann Klarheit bringen und den Stress reduzieren</li>
+            <li>Nutze die Zeit, um über verschiedene Perspektiven nachzudenken</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="einenplanmachen">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Einen Plan machen)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Planen.</p>
+        <ul>
+            <li>Ein Plan hilft dir, Struktur und Übersicht in deinen Alltag zu bringen</li>
+            <li>Setze dir realistische Ziele und unterteile sie in kleinere Schritte</li>
+            <li>Schriftliche Pläne erhöhen die Wahrscheinlichkeit, dass du deine Ziele erreichst</li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+    // Event Listener für die Menüs
+    document.querySelectorAll('.menu-summary').forEach(summary => {
+        summary.addEventListener('click', function() {
+            const menu = this.parentElement;
+            menu.classList.toggle('active');
+        });
+    });
+
+    // Funktion, um URL-Parameter zu extrahieren und zu bereinigen
+    function URLParamsPurifyer() {
+        const params = new URLSearchParams(window.location.search);
+        const answer = params.get('answer');
+        if (answer) {
+            return answer
+                .split(',')                // Trenne nach Kommas
+                .map(param => param.trim().toLowerCase().replace(/\s+/g, ''));  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
+        }
+        return [];
+    }
+
+    // Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
+    function showDivs() {
+        const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
+
+        if (keywords.length > 0) {
+            keywords.forEach(keyword => {
+                const div = document.getElementById(keyword);
+                if (div) {
+                    div.classList.remove('hidden');
+                }
+            });
+        }
+    }
+
+    // Nach dem Laden der Seite divs anzeigen
+    window.onload = showDivs;
+</script>
+
+</body>
+</html>
