@@ -1,0 +1,282 @@
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufklappbares Menü</title>
+    <style>
+        .menu-content {
+    display: none;
+    margin-top: 12px; /* Mehr Abstand nach oben */
+    border: 1px solid #b0bec5; /* Sanfterer Grauton */
+    padding: 15px; /* Mehr Innenabstand */
+    border-radius: 10px; /* Leicht stärkere Abrundung */
+    background-color: #fafafa; /* Helleres Weiß für angenehmeren Kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tieferer Schatten für mehr Dimension */
+}
+
+.menu.active .menu-content {
+    display: block;
+}
+
+.menu-summary {
+    cursor: pointer;
+    background-color: #eceff1; /* Leichte Grau-Blau-Tönung */
+    padding: 12px; /* Etwas mehr Innenabstand */
+    border: 1px solid #b0bec5; /* Gleicher Rand wie Inhalt */
+    border-radius: 10px; /* Einheitliche Abrundung */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Glatter Übergang auch für Schatten */
+}
+
+.menu-summary:hover {
+    background-color: #cfd8dc; /* Etwas dunklerer, aber sanfterer Hover-Effekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten bei Hover */
+}
+
+
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2> Ergebnisse aus Tally</h2>
+ <br><br>
+
+
+
+  <div class="menu hidden" id="bedürfnissewerdennichtbefriedigt">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Bedürfnisse werden nicht befriedigt)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema unerfüllte Bedürfnisse.</p>
+        <ul>
+            <li>Unerfüllte Bedürfnisse können zu Frustration und Unzufriedenheit führen</li>
+            <li>Erkenne deine Bedürfnisse und setze klare Prioritäten</li>
+            <li>Suche nach Wegen, wie du deine Bedürfnisse besser befriedigen kannst</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigautonomie">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Autonomie)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Autonomie.</p>
+        <ul>
+            <li>Ein Mangel an Autonomie kann das Gefühl der Fremdbestimmung verstärken</li>
+            <li>Versuche, dir Freiräume zu schaffen, in denen du selbst Entscheidungen treffen kannst</li>
+            <li>Setze dich für deine persönlichen Grenzen ein</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigbindung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Bindung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Bindung.</p>
+        <ul>
+            <li>Mangelnde emotionale Bindungen können zu Einsamkeit führen</li>
+            <li>Pflege deine Beziehungen und suche nach authentischer Verbindung</li>
+            <li>Investiere Zeit in Beziehungen, die dir wichtig sind</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="ichfühlemichselbstwirksam">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Ich fühle mich selbstwirksam)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Selbstwirksamkeit.</p>
+        <ul>
+            <li>Selbstwirksamkeit bedeutet, dass du an deine Fähigkeit glaubst, Herausforderungen zu meistern</li>
+            <li>Durch das Erreichen von Zielen steigert sich das Gefühl von Selbstwirksamkeit</li>
+            <li>Feiere deine Erfolge, auch wenn sie klein sind</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="bedeutsamkeit">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Bedeutsamkeit)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Bedeutsamkeit.</p>
+        <ul>
+            <li>Das Gefühl von Bedeutsamkeit entsteht, wenn deine Handlungen Sinn ergeben</li>
+            <li>Finde Aktivitäten, die dir Freude bereiten und einen Mehrwert bieten</li>
+            <li>Engagiere dich in Bereichen, die dir wichtig sind</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="ichsehnenachfrieden">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Ich sehne mich nach Frieden)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Frieden.</p>
+        <ul>
+            <li>Innere Ruhe und Frieden können durch Meditation oder Achtsamkeit gefördert werden</li>
+            <li>Finde heraus, was dich innerlich belastet und arbeite daran, es zu lösen</li>
+            <li>Schaffe dir einen Raum, der dich beruhigt und entspannt</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigkompetenz">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Kompetenz)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Kompetenzgefühl.</p>
+        <ul>
+            <li>Ein Gefühl der Inkompetenz kann das Selbstbewusstsein schwächen</li>
+            <li>Investiere in deine Fähigkeiten und lerne ständig dazu</li>
+            <li>Feiere deine Fortschritte und lerne aus deinen Fehlern</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigkontrolle">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Kontrolle)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Kontrolle.</p>
+        <ul>
+            <li>Gefühl der Kontrolllosigkeit kann zu Stress führen</li>
+            <li>Fokussiere dich auf Bereiche, in denen du Einfluss hast</li>
+            <li>Akzeptiere, dass nicht alles im Leben kontrollierbar ist</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zugehörigkeit">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zugehörigkeit)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zugehörigkeit.</p>
+        <ul>
+            <li>Ein starkes Zugehörigkeitsgefühl kann das Wohlbefinden verbessern</li>
+            <li>Engagiere dich in Gruppen oder Gemeinschaften, die dir wichtig sind</li>
+            <li>Suche nach Umfeldern, in denen du dich akzeptiert und geschätzt fühlst</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="ichsehnenachfreiheit">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Ich sehne mich nach Freiheit)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Freiheit.</p>
+        <ul>
+            <li>Freiheit bedeutet, Entscheidungen unabhängig treffen zu können</li>
+            <li>Schaffe dir Räume, in denen du dich frei ausdrücken kannst</li>
+            <li>Akzeptiere, dass wahre Freiheit auch Verantwortung mit sich bringt</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigsozialeeinbindung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Soziale Einbindung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema soziale Einbindung.</p>
+        <ul>
+            <li>Ein Mangel an sozialer Einbindung kann Einsamkeit verstärken</li>
+            <li>Suche nach Möglichkeiten, dich in sozialen Aktivitäten zu engagieren</li>
+            <li>Pflege bestehende Freundschaften und baue neue Kontakte auf</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigselbstbestimmung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Selbstbestimmung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Selbstbestimmung.</p>
+        <ul>
+            <li>Selbstbestimmung bedeutet, die Richtung deines Lebens selbst zu wählen</li>
+            <li>Setze dir klare Ziele und arbeite Schritt für Schritt auf sie hin</li>
+            <li>Finde heraus, welche Bereiche deines Lebens mehr Selbstbestimmung brauchen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="stimmigkeitundorientierung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Stimmigkeit und Orientierung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema innere Stimmigkeit.</p>
+        <ul>
+            <li>Stimmigkeit bedeutet, im Einklang mit deinen Werten zu leben</li>
+            <li>Orientierung hilft dir, klare Ziele und Wege zu definieren</li>
+            <li>Reflektiere regelmäßig, ob dein Handeln mit deinen Überzeugungen übereinstimmt</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="ichsehnenachheimat">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Ich sehne mich nach Heimat)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Heimat.</p>
+        <ul>
+            <li>Heimat ist oft mehr als ein physischer Ort; es ist ein Gefühl der Geborgenheit</li>
+            <li>Finde Wege, wie du dieses Gefühl in deinem Alltag schaffen kannst</li>
+            <li>Pflege deine Beziehungen und Orte, die sich für dich wie Heimat anfühlen</li>
+        </ul>
+    </div>
+</div>
+<div class="menu hidden" id="ichsehnenachankommen">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Ich sehne mich nach Ankommen)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Ankommen.</p>
+        <ul>
+            <li>Ankommen bedeutet, einen Ort oder Zustand zu finden, in dem du dich sicher und wohl fühlst</li>
+            <li>Suche nach Momenten, in denen du dich präsent und im Einklang mit dir selbst fühlst</li>
+            <li>Finde Routinen und Umgebungen, die dir Stabilität geben</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="ichsehnenachangenommensein">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Ich sehne mich nach Angenommen sein)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Angenommen sein.</p>
+        <ul>
+            <li>Das Bedürfnis, angenommen zu sein, ist tief in uns verankert</li>
+            <li>Suche nach Beziehungen, in denen du dich bedingungslos akzeptiert fühlst</li>
+            <li>Akzeptiere dich selbst, um dieses Gefühl auch von anderen zu empfangen</li>
+        </ul>
+    </div>
+</div>
+
+  
+
+<script>
+    // Event Listener für die Menüs
+    document.querySelectorAll('.menu-summary').forEach(summary => {
+        summary.addEventListener('click', function() {
+            const menu = this.parentElement;
+            menu.classList.toggle('active');
+        });
+    });
+
+    // Funktion, um URL-Parameter zu extrahieren und zu bereinigen
+    function URLParamsPurifyer() {
+        const params = new URLSearchParams(window.location.search);
+        const answer = params.get('answer');
+        if (answer) {
+            return answer
+                .split(',')                // Trenne nach Kommas
+                .map(param => param.trim().toLowerCase().replace(/\s+/g, ''));  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
+        }
+        return [];
+    }
+
+    // Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
+    function showDivs() {
+        const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
+
+        if (keywords.length > 0) {
+            keywords.forEach(keyword => {
+                const div = document.getElementById(keyword);
+                if (div) {
+                    div.classList.remove('hidden');
+                }
+            });
+        }
+    }
+
+    // Nach dem Laden der Seite divs anzeigen
+    window.onload = showDivs;
+</script>
+
+</body>
+</html>
