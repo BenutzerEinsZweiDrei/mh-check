@@ -1,0 +1,234 @@
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufklappbares Menü</title>
+    <style>
+        .menu-content {
+    display: none;
+    margin-top: 12px; /* Mehr Abstand nach oben */
+    border: 1px solid #b0bec5; /* Sanfterer Grauton */
+    padding: 15px; /* Mehr Innenabstand */
+    border-radius: 10px; /* Leicht stärkere Abrundung */
+    background-color: #fafafa; /* Helleres Weiß für angenehmeren Kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tieferer Schatten für mehr Dimension */
+}
+
+.menu.active .menu-content {
+    display: block;
+}
+
+.menu-summary {
+    cursor: pointer;
+    background-color: #eceff1; /* Leichte Grau-Blau-Tönung */
+    padding: 12px; /* Etwas mehr Innenabstand */
+    border: 1px solid #b0bec5; /* Gleicher Rand wie Inhalt */
+    border-radius: 10px; /* Einheitliche Abrundung */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Glatter Übergang auch für Schatten */
+}
+
+.menu-summary:hover {
+    background-color: #cfd8dc; /* Etwas dunklerer, aber sanfterer Hover-Effekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten bei Hover */
+}
+
+
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2> Ergebnisse aus Tally</h2>
+ <br><br>
+
+
+  <div class="menu hidden" id="emotionalekonflikte">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Emotionale Konflikte)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Emotionale Konflikte.</p>
+        <ul>
+            <li>Emotionale Konflikte können zu innerer Anspannung führen</li>
+            <li>Offene Kommunikation hilft, Emotionen besser zu verstehen und zu verarbeiten</li>
+            <li>Erlaube dir, deine Gefühle anzunehmen und darüber zu sprechen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuhoheerwartungen">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu hohe Erwartungen)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Erwartungen.</p>
+        <ul>
+            <li>Hohe Erwartungen an sich selbst oder andere können zu Enttäuschungen führen</li>
+            <li>Setze realistische und erreichbare Ziele</li>
+            <li>Akzeptiere, dass nicht alles perfekt sein muss, um gut zu sein</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuernst">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu ernst)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Ernsthaftigkeit.</p>
+        <ul>
+            <li>Es ist wichtig, ernsthaft zu sein, aber auch den Spaß nicht zu vergessen</li>
+            <li>Lachen und Humor können helfen, Stress abzubauen</li>
+            <li>Versuche, in stressigen Situationen eine positive Perspektive zu finden</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="vielinkonkurrenz">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Viel in Konkurrenz)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Konkurrenzdenken.</p>
+        <ul>
+            <li>Ständige Konkurrenz kann zu unnötigem Druck führen</li>
+            <li>Vergleiche dich weniger mit anderen, sondern fokussiere dich auf deine eigenen Fortschritte</li>
+            <li>Kooperation kann oft mehr bewirken als Konkurrenz</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="perfektionismus">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Perfektionismus)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Perfektionismus.</p>
+        <ul>
+            <li>Perfektionismus kann Stress und Angst verstärken</li>
+            <li>Es ist in Ordnung, Fehler zu machen und aus ihnen zu lernen</li>
+            <li>Konzentriere dich auf Fortschritt, nicht auf Perfektion</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="terminkalenderzuvoll">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Terminkalender zu voll)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zeitmanagement.</p>
+        <ul>
+            <li>Ein überfüllter Terminkalender kann zu Stress und Erschöpfung führen</li>
+            <li>Lerne, Prioritäten zu setzen und Nein zu sagen</li>
+            <li>Plane regelmäßige Pausen ein, um dich zu erholen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuvielselbstkritik">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu viel Selbstkritik)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Selbstkritik.</p>
+        <ul>
+            <li>Zu viel Selbstkritik kann das Selbstwertgefühl schwächen</li>
+            <li>Lerne, freundlich und verständnisvoll mit dir selbst umzugehen</li>
+            <li>Fokussiere dich auf deine Stärken und Erfolge, anstatt auf deine Schwächen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="ungesunderkörper">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Ungesunder Körper)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema körperliche Gesundheit.</p>
+        <ul>
+            <li>Eine gesunde Ernährung und regelmäßige Bewegung fördern das Wohlbefinden</li>
+            <li>Vermeide ungesunde Gewohnheiten wie Rauchen oder übermäßigen Alkoholkonsum</li>
+            <li>Achte auf ausreichend Schlaf und Stressbewältigung</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="badhabits">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Bad Habits)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema schlechte Gewohnheiten.</p>
+        <ul>
+            <li>Schlechte Gewohnheiten können den Alltag negativ beeinflussen</li>
+            <li>Identifiziere deine ungesunden Verhaltensmuster und ersetze sie durch positive</li>
+            <li>Es braucht Zeit und Geduld, um Gewohnheiten zu ändern</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="vieleproblemeanderer">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Viele Probleme Anderer)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Umgang mit den Problemen anderer.</p>
+        <ul>
+            <li>Es ist wichtig, anderen zu helfen, aber auch deine eigenen Grenzen zu erkennen</li>
+            <li>Lerne, dich abzugrenzen, um nicht selbst überfordert zu werden</li>
+            <li>Finde ein gesundes Gleichgewicht zwischen Unterstützung und Selbstfürsorge</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="unehrlichkeit">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Unehrlichkeit)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Unehrlichkeit.</p>
+        <ul>
+            <li>Unehrlichkeit kann das Vertrauen in Beziehungen zerstören</li>
+            <li>Ehrlichkeit und Offenheit sind entscheidend für gesunde Kommunikation</li>
+            <li>Lerne, deine Gefühle ehrlich auszudrücken, ohne andere zu verletzen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="offenewunden">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Offene Wunden)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema offene Wunden.</p>
+        <ul>
+            <li>Offene Wunden sollten sauber gehalten und regelmäßig desinfiziert werden</li>
+            <li>Bei größeren Verletzungen ist ärztliche Hilfe notwendig</li>
+            <li>Vermeide unnötigen Druck oder Reibung, um die Heilung zu fördern</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<script>
+    // Event Listener für die Menüs
+    document.querySelectorAll('.menu-summary').forEach(summary => {
+        summary.addEventListener('click', function() {
+            const menu = this.parentElement;
+            menu.classList.toggle('active');
+        });
+    });
+
+    // Funktion, um URL-Parameter zu extrahieren und zu bereinigen
+    function URLParamsPurifyer() {
+        const params = new URLSearchParams(window.location.search);
+        const answer = params.get('answer');
+        if (answer) {
+            return answer
+                .split(',')                // Trenne nach Kommas
+                .map(param => param.trim().toLowerCase().replace(/\s+/g, ''));  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
+        }
+        return [];
+    }
+
+    // Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
+    function showDivs() {
+        const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
+
+        if (keywords.length > 0) {
+            keywords.forEach(keyword => {
+                const div = document.getElementById(keyword);
+                if (div) {
+                    div.classList.remove('hidden');
+                }
+            });
+        }
+    }
+
+    // Nach dem Laden der Seite divs anzeigen
+    window.onload = showDivs;
+</script>
+
+</body>
+</html>
