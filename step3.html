@@ -1,0 +1,162 @@
+ <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufklappbares Menü</title>
+    <style>
+        .menu-content {
+    display: none;
+    margin-top: 12px; /* Mehr Abstand nach oben */
+    border: 1px solid #b0bec5; /* Sanfterer Grauton */
+    padding: 15px; /* Mehr Innenabstand */
+    border-radius: 10px; /* Leicht stärkere Abrundung */
+    background-color: #fafafa; /* Helleres Weiß für angenehmeren Kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tieferer Schatten für mehr Dimension */
+}
+
+.menu.active .menu-content {
+    display: block;
+}
+
+.menu-summary {
+    cursor: pointer;
+    background-color: #eceff1; /* Leichte Grau-Blau-Tönung */
+    padding: 12px; /* Etwas mehr Innenabstand */
+    border: 1px solid #b0bec5; /* Gleicher Rand wie Inhalt */
+    border-radius: 10px; /* Einheitliche Abrundung */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Glatter Übergang auch für Schatten */
+}
+
+.menu-summary:hover {
+    background-color: #cfd8dc; /* Etwas dunklerer, aber sanfterer Hover-Effekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten bei Hover */
+}
+
+
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2> Ergebnisse aus Tally</h2>
+ <br><br>
+<div clas
+
+  <div class="menu hidden" id="allergischereaktion">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Allergische Reaktion)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Allergische Reaktionen.</p>
+        <ul>
+            <li>Eine allergische Reaktion kann durch Nahrungsmittel, Pollen oder Tierhaare ausgelöst werden</li>
+            <li>Symptome umfassen Juckreiz, Schwellungen und Atembeschwerden</li>
+            <li>Suche im Notfall sofort ärztliche Hilfe auf</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="sozialebatterieerschöpft">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Soziale Batterie erschöpft)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Soziale Erschöpfung.</p>
+        <ul>
+            <li>Nach viel sozialer Interaktion kann es hilfreich sein, Zeit alleine zu verbringen</li>
+            <li>Ruhige Aktivitäten wie Lesen oder Spazierengehen können helfen, wieder Energie zu tanken</li>
+            <li>Gib dir selbst die Erlaubnis, Pausen zu machen, wenn du sie brauchst</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="vielnegativerstress">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Viel negativer Stress)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Stressbewältigung.</p>
+        <ul>
+            <li>Zu viel negativer Stress kann sich auf die Gesundheit auswirken</li>
+            <li>Techniken wie Atemübungen oder Meditation können helfen, Stress zu reduzieren</li>
+            <li>Setze Prioritäten und delegiere Aufgaben, um Druck abzubauen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuvielamhandy">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu viel am Handy)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Handy-Nutzung.</p>
+        <ul>
+            <li>Längere Bildschirmzeiten können deine Augen und Konzentration belasten</li>
+            <li>Setze dir klare Zeiten, wann du das Handy benutzt und wann du Pausen machst</li>
+            <li>Nutze die Zeit offline, um dich auf andere Dinge zu konzentrieren</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="erkältung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Erkältung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Erkältung.</p>
+        <ul>
+            <li>Halte dich warm und trinke viel Flüssigkeit, um die Symptome zu lindern</li>
+            <li>Ruhe und Schlaf sind wichtig, um schneller gesund zu werden</li>
+            <li>Wenn sich die Symptome verschlimmern, konsultiere einen Arzt</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zwischenmenschlichekonflikte">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zwischenmenschliche Konflikte)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Konfliktbewältigung.</p>
+        <ul>
+            <li>Versuche, ruhig und respektvoll zu kommunizieren, um Missverständnisse zu vermeiden</li>
+            <li>Manchmal ist es hilfreich, eine Pause einzulegen, bevor man den Konflikt anspricht</li>
+            <li>Setze auf offene Kommunikation und sei bereit, Kompromisse zu machen</li>
+        </ul>
+    </div>
+</div>
+
+
+
+<script>
+    // Event Listener für die Menüs
+    document.querySelectorAll('.menu-summary').forEach(summary => {
+        summary.addEventListener('click', function() {
+            const menu = this.parentElement;
+            menu.classList.toggle('active');
+        });
+    });
+
+    // Funktion, um URL-Parameter zu extrahieren und zu bereinigen
+    function URLParamsPurifyer() {
+        const params = new URLSearchParams(window.location.search);
+        const answer = params.get('answer');
+        if (answer) {
+            return answer
+                .split(',')                // Trenne nach Kommas
+                .map(param => param.trim().toLowerCase().replace(/\s+/g, ''));  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
+        }
+        return [];
+    }
+
+    // Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
+    function showDivs() {
+        const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
+
+        if (keywords.length > 0) {
+            keywords.forEach(keyword => {
+                const div = document.getElementById(keyword);
+                if (div) {
+                    div.classList.remove('hidden');
+                }
+            });
+        }
+    }
+
+    // Nach dem Laden der Seite divs anzeigen
+    window.onload = showDivs;
+</script>
+
+</body>
+</html>
