@@ -1,0 +1,627 @@
+  <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aufklappbares Menü</title>
+    <style>
+        .menu-content {
+    display: none;
+    margin-top: 12px; /* Mehr Abstand nach oben */
+    border: 1px solid #b0bec5; /* Sanfterer Grauton */
+    padding: 15px; /* Mehr Innenabstand */
+    border-radius: 10px; /* Leicht stärkere Abrundung */
+    background-color: #fafafa; /* Helleres Weiß für angenehmeren Kontrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Tieferer Schatten für mehr Dimension */
+}
+
+.menu.active .menu-content {
+    display: block;
+}
+
+.menu-summary {
+    cursor: pointer;
+    background-color: #eceff1; /* Leichte Grau-Blau-Tönung */
+    padding: 12px; /* Etwas mehr Innenabstand */
+    border: 1px solid #b0bec5; /* Gleicher Rand wie Inhalt */
+    border-radius: 10px; /* Einheitliche Abrundung */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Glatter Übergang auch für Schatten */
+}
+
+.menu-summary:hover {
+    background-color: #cfd8dc; /* Etwas dunklerer, aber sanfterer Hover-Effekt */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten bei Hover */
+}
+
+
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<h2> Ergebnisse aus Tally</h2>
+ <br><br>
+
+<div class="menu hidden" id="gesunderkörper">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Gesunder Körper)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema gesunder Körper.</p>
+        <ul>
+            <li>Ein gesunder Körper fördert Wohlbefinden und Energie</li>
+            <li>Achte auf eine ausgewogene Ernährung und regelmäßige Bewegung</li>
+            <li>Regelmäßige Vorsorgeuntersuchungen sind wichtig</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="hirnchemie">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Hirnchemie)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Hirnchemie.</p>
+        <ul>
+            <li>Hirnchemie beeinflusst Stimmung, Verhalten und Denken</li>
+            <li>Eine ausgewogene Ernährung kann helfen, die Hirnchemie zu stabilisieren</li>
+            <li>Medikamente können bei chemischen Ungleichgewichten hilfreich sein</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="nährstoffmangel">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Nährstoffmangel)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Nährstoffmangel.</p>
+        <ul>
+            <li>Nährstoffmangel kann Müdigkeit und Schwäche verursachen</li>
+            <li>Eine ausgewogene Ernährung hilft, Nährstoffdefizite zu vermeiden</li>
+            <li>Bei Verdacht auf Mangelerscheinungen sollten Blutwerte untersucht werden</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="vitaminmangel">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Vitaminmangel)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Vitaminmangel.</p>
+        <ul>
+            <li>Vitaminmängel können das Immunsystem und die Energie beeinträchtigen</li>
+            <li>Besonders wichtig sind Vitamine wie Vitamin D, B12 und C</li>
+            <li>Eine ausgewogene Ernährung oder Nahrungsergänzungsmittel können helfen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="allgemeineträgheit">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Allgemeine Trägheit)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema allgemeine Trägheit.</p>
+        <ul>
+            <li>Trägheit kann durch Erschöpfung oder einen Mangel an Bewegung entstehen</li>
+            <li>Regelmäßige Aktivität und frische Luft können Abhilfe schaffen</li>
+            <li>Auch Stress und schlechte Schlafgewohnheiten spielen eine Rolle</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="darmflora">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Darmflora)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Darmflora.</p>
+        <ul>
+            <li>Eine gesunde Darmflora ist entscheidend für die Verdauung und das Immunsystem</li>
+            <li>Probiotika und eine ballaststoffreiche Ernährung fördern die Darmgesundheit</li>
+            <li>Antibiotika können das Gleichgewicht der Darmflora beeinträchtigen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="metabolismus">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Metabolismus)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Metabolismus.</p>
+        <ul>
+            <li>Der Metabolismus reguliert, wie effizient der Körper Nahrung in Energie umwandelt</li>
+            <li>Ein gesunder Stoffwechsel wird durch Bewegung und eine ausgewogene Ernährung unterstützt</li>
+            <li>Hormonelle Störungen können den Metabolismus beeinflussen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="hormone">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Hormone)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Hormone.</p>
+        <ul>
+            <li>Hormone regulieren viele Prozesse im Körper, darunter Stress, Schlaf und Stimmung</li>
+            <li>Hormonelle Ungleichgewichte können durch Ernährung, Lebensstil oder medizinische Bedingungen entstehen</li>
+            <li>Hormontherapien können bei starken Ungleichgewichten helfen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="schilddrüse">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Schilddrüse)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Schilddrüse.</p>
+        <ul>
+            <li>Die Schilddrüse produziert Hormone, die den Stoffwechsel regulieren</li>
+            <li>Störungen der Schilddrüse können zu Müdigkeit, Gewichtszunahme oder -verlust führen</li>
+            <li>Regelmäßige Untersuchungen der Schilddrüsenfunktion sind wichtig</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="diabetes">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Diabetes)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Diabetes.</p>
+        <ul>
+            <li>Diabetes beeinflusst die Fähigkeit des Körpers, Blutzucker zu regulieren</li>
+            <li>Eine ausgewogene Ernährung und regelmäßige Bewegung können helfen, Diabetes zu managen</li>
+            <li>Medikamente und Insulintherapie können bei der Kontrolle der Krankheit unterstützen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="herzkreislauf">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Herzkreislauf)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Herzkreislauf.</p>
+        <ul>
+            <li>Ein gesundes Herz-Kreislauf-System ist entscheidend für allgemeines Wohlbefinden</li>
+            <li>Regelmäßige Bewegung und eine herzgesunde Ernährung fördern die Herzgesundheit</li>
+            <li>Blutdruck und Cholesterinspiegel sollten regelmäßig überwacht werden</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="mikroentzündungenimgehirn">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Mikroentzündungen im Gehirn)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Mikroentzündungen im Gehirn.</p>
+        <ul>
+            <li>Mikroentzündungen können kognitive Funktionen und die Stimmung beeinflussen</li>
+            <li>Eine entzündungshemmende Ernährung kann helfen, Entzündungen zu reduzieren</li>
+            <li>Regelmäßige Bewegung und Stressabbau unterstützen die Gehirngesundheit</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="omega3defizit">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Omega 3 Defizit)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Omega 3 Defizit.</p>
+        <ul>
+            <li>Omega-3-Fettsäuren sind wichtig für die Herz- und Gehirngesundheit</li>
+            <li>Ein Mangel an Omega-3-Fettsäuren kann zu Entzündungen und Müdigkeit führen</li>
+            <li>Fettreiche Fische und Nahrungsergänzungsmittel sind gute Omega-3-Quellen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="kaffeesucht">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Kaffeesucht)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Kaffeesucht.</p>
+        <ul>
+            <li>Zu viel Koffein kann zu Schlaflosigkeit und Nervosität führen</li>
+            <li>Reduziere deinen Koffeinkonsum schrittweise, um Entzugserscheinungen zu vermeiden</li>
+            <li>Versuche, koffeinfreie Alternativen wie Kräutertees zu finden</li>
+        </ul>
+    </div>
+</div>
+<div class="menu hidden" id="sauerstoffmangel">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Sauerstoffmangel)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Sauerstoffmangel.</p>
+        <ul>
+            <li>Sauerstoffmangel kann zu Müdigkeit und Konzentrationsschwierigkeiten führen</li>
+            <li>Regelmäßige Bewegung und tiefes Atmen fördern die Sauerstoffaufnahme</li>
+            <li>Frische Luft und ein gut belüfteter Raum können Abhilfe schaffen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigsport">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Sport)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zu wenig Sport.</p>
+        <ul>
+            <li>Regelmäßige Bewegung ist entscheidend für körperliche und geistige Gesundheit</li>
+            <li>Schon kurze Spaziergänge oder einfache Übungen können einen Unterschied machen</li>
+            <li>Sport kann helfen, Stress abzubauen und die Stimmung zu heben</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuwenigentspannung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu wenig Entspannung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zu wenig Entspannung.</p>
+        <ul>
+            <li>Entspannung ist wichtig, um Stress abzubauen und die Gesundheit zu erhalten</li>
+            <li>Finde tägliche Momente der Ruhe, um Körper und Geist zu erholen</li>
+            <li>Entspannungstechniken wie Meditation oder Yoga können helfen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="positiveemotionen">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Positive Emotionen)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Positive Emotionen.</p>
+        <ul>
+            <li>Positive Emotionen fördern Wohlbefinden und Resilienz</li>
+            <li>Fokussiere dich auf Aktivitäten, die dir Freude bereiten</li>
+            <li>Praktiziere Dankbarkeit, um positive Emotionen zu stärken</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="purpose">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Purpose)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Purpose.</p>
+        <ul>
+            <li>Purpose, oder Sinnhaftigkeit, gibt dem Leben Richtung und Bedeutung</li>
+            <li>Finde heraus, was dir wichtig ist und wonach du strebst</li>
+            <li>Setze dir klare Ziele, die deinem Leben Sinn verleihen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="passion">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Passion)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Passion.</p>
+        <ul>
+            <li>Passion ist die Leidenschaft für Dinge, die dich antreiben</li>
+            <li>Finde heraus, was dich begeistert, und investiere Zeit in diese Dinge</li>
+            <li>Leidenschaft kann dir Energie und Erfüllung schenken</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="flow">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Flow)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Flow.</p>
+        <ul>
+            <li>Flow beschreibt einen Zustand völliger Vertiefung in eine Aktivität</li>
+            <li>Finde Aufgaben, die deine Fähigkeiten herausfordern, ohne zu überfordern</li>
+            <li>Flow kann produktiver und erfüllender machen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="intellektuelleanregung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Intellektuelle Anregung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Intellektuelle Anregung.</p>
+        <ul>
+            <li>Intellektuelle Anregung hält das Gehirn fit und steigert das Denkvermögen</li>
+            <li>Lies Bücher, löse Rätsel oder lerne neue Dinge, um dein Gehirn zu fordern</li>
+            <li>Intellektuelle Herausforderungen können dir ein Gefühl von Erfüllung geben</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="sozialeerfüllung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Soziale Erfüllung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Soziale Erfüllung.</p>
+        <ul>
+            <li>Soziale Beziehungen fördern Wohlbefinden und emotionale Gesundheit</li>
+            <li>Pflege Beziehungen, die dir Erfüllung und Unterstützung geben</li>
+            <li>Gemeinsame Aktivitäten mit Freunden und Familie stärken die soziale Bindung</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="herzfehler">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Herzfehler)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Herzfehler.</p>
+        <ul>
+            <li>Herzfehler können angeboren oder im Laufe des Lebens entstehen</li>
+            <li>Regelmäßige medizinische Kontrollen sind entscheidend für das Management</li>
+            <li>Eine herzgesunde Lebensweise kann das Risiko von Komplikationen verringern</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="herzleistung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Herzleistung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Herzleistung.</p>
+        <ul>
+            <li>Die Herzleistung bestimmt, wie effizient das Herz den Körper mit Blut versorgt</li>
+            <li>Sport und eine ausgewogene Ernährung stärken das Herz</li>
+            <li>Medikamente oder Therapien können bei eingeschränkter Herzleistung helfen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="nebenniere">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Nebenniere)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Nebenniere.</p>
+        <ul>
+            <li>Die Nebenniere produziert Hormone, die Stress und Stoffwechsel regulieren</li>
+            <li>Übermäßiger Stress kann die Nebenniere belasten</li>
+            <li>Entspannung und Stressmanagement unterstützen die Nebenniere</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="mitochondrien">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Mitochondrien)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Mitochondrien.</p>
+        <ul>
+            <li>Mitochondrien sind die Kraftwerke der Zellen und liefern Energie</li>
+            <li>Eine gesunde Ernährung unterstützt die Funktion der Mitochondrien</li>
+            <li>Stress und ein ungesunder Lebensstil können die Funktion beeinträchtigen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="medikamente">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Medikamente)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Medikamente.</p>
+        <ul>
+            <li>Medikamente können körperliche und psychische Zustände beeinflussen</li>
+            <li>Es ist wichtig, die Anweisungen des Arztes genau zu befolgen</li>
+            <li>Bei Nebenwirkungen oder Problemen sollte immer ein Arzt konsultiert werden</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="libido">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Libido)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Libido.</p>
+        <ul>
+            <li>Libido wird von Hormonen, emotionalem Wohlbefinden und körperlicher Gesundheit beeinflusst</li>
+            <li>Stress, Ernährung und Medikamente können die Libido beeinflussen</li>
+                       <li>Eine gesunde Lebensweise und Stressabbau fördern eine gesunde Libido</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="vitamine">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Vitamine)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Vitamine.</p>
+        <ul>
+            <li>Vitamine sind essenziell für viele Körperfunktionen, einschließlich Immunabwehr und Zellregeneration</li>
+            <li>Vitaminmangel kann durch eine ausgewogene Ernährung oder Nahrungsergänzungsmittel behoben werden</li>
+            <li>Besonders wichtig sind Vitamine wie Vitamin D, B12 und C</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="nährstoffe">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Nährstoffe)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Nährstoffe.</p>
+        <ul>
+            <li>Nährstoffe liefern die Bausteine, die der Körper für Wachstum und Erhaltung benötigt</li>
+            <li>Eine ausgewogene Ernährung stellt sicher, dass der Körper alle notwendigen Nährstoffe erhält</li>
+            <li>Mängel an wichtigen Nährstoffen wie Eisen oder Kalzium können Müdigkeit und Schwäche verursachen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="infektionen">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Infektionen)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Infektionen.</p>
+        <ul>
+            <li>Infektionen können durch Bakterien, Viren oder Pilze verursacht werden</li>
+            <li>Eine starke Immunabwehr kann helfen, Infektionen abzuwehren</li>
+            <li>Bei Symptomen einer Infektion sollte umgehend medizinischer Rat eingeholt werden</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="bakterien">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Bakterien)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Bakterien.</p>
+        <ul>
+            <li>Bakterien sind Mikroorganismen, die in vielen Fällen harmlos oder sogar nützlich sind</li>
+            <li>Pathogene Bakterien können jedoch Infektionen verursachen</li>
+            <li>Antibiotika werden oft zur Bekämpfung bakterieller Infektionen eingesetzt</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="viruserkrankung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Viruserkrankung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Viruserkrankung.</p>
+        <ul>
+            <li>Viruserkrankungen können Erkältungen, Grippe und viele weitere Beschwerden verursachen</li>
+            <li>Eine Impfung kann bei einigen Virusarten Schutz bieten</li>
+            <li>Ausreichend Ruhe und Flüssigkeit helfen dem Körper, Viren zu bekämpfen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="autoimmunerkrankung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Autoimmunerkrankung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Autoimmunerkrankung.</p>
+        <ul>
+            <li>Bei Autoimmunerkrankungen greift das Immunsystem fälschlicherweise den eigenen Körper an</li>
+            <li>Eine frühzeitige Diagnose und Behandlung können helfen, Symptome zu lindern</li>
+            <li>Eine gesunde Lebensweise kann helfen, das Immunsystem zu unterstützen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="lymeoderborreliose">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Lyme oder Borreliose)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Lyme oder Borreliose.</p>
+        <ul>
+            <li>Borreliose ist eine durch Zecken übertragene Krankheit, die Gelenke und das Nervensystem betreffen kann</li>
+            <li>Frühe Behandlung mit Antibiotika kann schwerwiegende Komplikationen verhindern</li>
+            <li>Schütze dich bei Outdoor-Aktivitäten vor Zeckenbissen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuvielzucker">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu viel Zucker)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zu viel Zucker.</p>
+        <ul>
+            <li>Ein hoher Zuckerkonsum kann zu Gewichtszunahme, Diabetes und anderen Gesundheitsproblemen führen</li>
+            <li>Reduziere den Konsum von verarbeiteten Lebensmitteln und Getränken mit hohem Zuckergehalt</li>
+            <li>Natürliche Zuckerquellen wie Obst sind eine gesündere Alternative</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuvielkaffee">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu viel Kaffee)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zu viel Kaffee.</p>
+        <ul>
+            <li>Ein übermäßiger Kaffeekonsum kann zu Nervosität, Schlafstörungen und Herzrasen führen</li>
+            <li>Versuche, deinen Koffeinkonsum zu reduzieren oder auf entkoffeinierte Alternativen umzusteigen</li>
+            <li>Kaffee in Maßen kann positive gesundheitliche Effekte haben</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="allergien">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Allergien)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Allergien.</p>
+        <ul>
+            <li>Allergien entstehen, wenn das Immunsystem überreagiert und harmlose Substanzen als Bedrohung ansieht</li>
+            <li>Antihistaminika und andere Medikamente können Symptome lindern</li>
+            <li>Eine Diagnose beim Allergologen kann helfen, spezifische Auslöser zu identifizieren</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuvielstress">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu viel Stress)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zu viel Stress.</p>
+        <ul>
+            <li>Chronischer Stress kann zu einer Vielzahl von körperlichen und psychischen Gesundheitsproblemen führen</li>
+            <li>Entspannungstechniken wie Meditation und Yoga können helfen, Stress zu reduzieren</li>
+            <li>Regelmäßige Bewegung und ausreichend Schlaf sind entscheidend für das Stressmanagement</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="zuvielangst">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Zu viel Angst)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Zu viel Angst.</p>
+        <ul>
+            <li>Angst ist eine normale Reaktion, aber übermäßige Angst kann das tägliche Leben beeinträchtigen</li>
+            <li>Therapien wie kognitive Verhaltenstherapie und Atemtechniken können helfen, Ängste zu kontrollieren</li>
+            <li>Suche professionelle Hilfe, wenn Angstgefühle überwältigend werden</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="blutdruck">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Blutdruck)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Blutdruck.</p>
+        <ul>
+            <li>Ein gesunder Blutdruck ist wichtig für die Herzgesundheit und das allgemeine Wohlbefinden</li>
+            <li>Eine ausgewogene Ernährung, Bewegung und Stressreduktion helfen, den Blutdruck zu kontrollieren</li>
+            <li>Hoher Blutdruck kann das Risiko für Herz-Kreislauf-Erkrankungen erhöhen</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="blutzucker">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Blutzucker)</div>
+    <div class="menu-content">
+                <p>Hier sind die Informationen zum Thema Blutzucker.</p>
+        <ul>
+            <li>Der Blutzuckerspiegel beeinflusst das Energieniveau und das allgemeine Wohlbefinden</li>
+            <li>Eine ausgewogene Ernährung und regelmäßige Bewegung sind wichtig für einen stabilen Blutzuckerspiegel</li>
+            <li>Überwachung des Blutzuckers ist entscheidend für Menschen mit Diabetes</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="sensorischeerschöpfung">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Sensorische Erschöpfung)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Sensorische Erschöpfung.</p>
+        <ul>
+            <li>Sensorische Erschöpfung tritt auf, wenn das Nervensystem überstimuliert ist</li>
+            <li>Regelmäßige Pausen von Bildschirmen und lauten Umgebungen können helfen</li>
+            <li>Entspannungstechniken können die sensorische Überlastung lindern</li>
+        </ul>
+    </div>
+</div>
+
+<div class="menu hidden" id="vitamind">
+    <div class="menu-summary">Klicke hier, um mehr zu erfahren (Vitamin D)</div>
+    <div class="menu-content">
+        <p>Hier sind die Informationen zum Thema Vitamin D.</p>
+        <ul>
+            <li>Vitamin D ist wichtig für die Knochengesundheit und das Immunsystem</li>
+            <li>Es wird durch Sonnenlicht und einige Nahrungsmittel aufgenommen</li>
+            <li>Ein Mangel kann zu Gesundheitsproblemen führen, einschließlich Osteoporose</li>
+        </ul>
+    </div>
+</div>
+
+
+<script>
+    // Event Listener für die Menüs
+    document.querySelectorAll('.menu-summary').forEach(summary => {
+        summary.addEventListener('click', function() {
+            const menu = this.parentElement;
+            menu.classList.toggle('active');
+        });
+    });
+
+    // Funktion, um URL-Parameter zu extrahieren und zu bereinigen
+    function URLParamsPurifyer() {
+        const params = new URLSearchParams(window.location.search);
+        const answer = params.get('answer');
+        if (answer) {
+            return answer
+                .split(',')                // Trenne nach Kommas
+                .map(param => param.trim().toLowerCase().replace(/\s+/g, ''));  // Bereinige Leerzeichen und wandle in Kleinbuchstaben um
+        }
+        return [];
+    }
+
+    // Funktion, um das entsprechende div basierend auf dem Keyword anzuzeigen
+    function showDivs() {
+        const keywords = URLParamsPurifyer(); // Hol die bereinigten URL-Parameter
+
+        if (keywords.length > 0) {
+            keywords.forEach(keyword => {
+                const div = document.getElementById(keyword);
+                if (div) {
+                    div.classList.remove('hidden');
+                }
+            });
+        }
+    }
+
+    // Nach dem Laden der Seite divs anzeigen
+    window.onload = showDivs;
+</script>
+
+</body>
+</html>
